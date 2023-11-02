@@ -1,0 +1,41 @@
+{% block content %}
+<br><br><br><br><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+  <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}</style>
+
+
+</head>
+<body>
+
+{% for message in messages %}
+<h5> {{message}} </h5>
+{% endfor %}
+
+
+  <form method="post" action="register">
+    {% csrf_token %}
+    <p>Username:</p>
+    <input type="text" name="username" />
+
+    <p>Email:</p>
+    <input type="email" name="email" />
+
+    <p>Password:</p>
+    <input type="password" name="password" />
+
+    <p>Repeat Password:</p>
+    <input type="password" name="password2"/> <br>
+
+    <input type="submit" />
+</form>
+</body>
+</html>
+{% endblock content %}
